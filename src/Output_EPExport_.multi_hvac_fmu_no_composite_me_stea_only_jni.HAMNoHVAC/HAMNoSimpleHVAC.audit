@@ -1,0 +1,1064 @@
+  Processing Data Dictionary (Energy+.idd) File -- Complete
+  Maximum number of Alpha Args=        4500
+  Maximum number of Numeric Args=       21040
+  Number of Object Definitions=         736
+  Number of Section Definitions=           2
+  Total Number of Alpha Fields=       18192
+  Total Number of Numeric Fields=       39587
+  Total Number of Fields=       57779
+  Processing Input Data File (in.idf) -- Start
+      1 Version,
+      2     8.2;                     !- Version Identifier
+      3 SimulationControl,
+      4     No,                      !- Do Zone Sizing Calculation
+      5     No,                      !- Do System Sizing Calculation
+      6     No,                      !- Do Plant Sizing Calculation
+      7     No,                      !- Run Simulation for Sizing Periods
+      8     Yes;                     !- Run Simulation for Weather File Run Periods
+      9 Building,
+     10     NONE,                    !- Name
+     11     ,                        !- North Axis {deg}
+     12     Suburbs,                 !- Terrain
+     13     0.04,                    !- Loads Convergence Tolerance Value
+     14     0.4,                     !- Temperature Convergence Tolerance Value {deltaC}
+     15     MinimalShadowing,        !- Solar Distribution
+     16     25,                      !- Maximum Number of Warmup Days
+     17     6;                       !- Minimum Number of Warmup Days
+     18 SurfaceConvectionAlgorithm:Inside,
+     19     TARP;                    !- Algorithm
+     20 SurfaceConvectionAlgorithm:Outside,
+     21     DOE-2;                   !- Algorithm
+     22 HeatBalanceAlgorithm,
+     23     ConductionTransferFunction;  !- Algorithm
+     24 Timestep,
+     25     4;                       !- Number of Timesteps per Hour
+     26 Site:Location,
+     27     CHICAGO_IL_USA_WMO_725300,  !- Name
+     28     42.00,                   !- Latitude {deg}
+     29     -87.88,                  !- Longitude {deg}
+     30     -6.00,                   !- Time Zone {hr}
+     31     190.00;                  !- Elevation {m}
+     32 SizingPeriod:DesignDay,
+     33     CHICAGO_IL_USA Annual Heating 99% Design Conditions DB,  !- Name
+     34     1,                       !- Month
+     35     21,                      !- Day of Month
+     36     WinterDesignDay,         !- Day Type
+     37     -17.3,                   !- Maximum Dry-Bulb Temperature {C}
+     38     0.0,                     !- Daily Dry-Bulb Temperature Range {deltaC}
+     39     ,                        !- Dry-Bulb Temperature Range Modifier Type
+     40     ,                        !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+     41     Wetbulb,                 !- Humidity Condition Type
+     42     -17.3,                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+     43     ,                        !- Humidity Condition Day Schedule Name
+     44     ,                        !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+     45     ,                        !- Enthalpy at Maximum Dry-Bulb {J/kg}
+     46     ,                        !- Daily Wet-Bulb Temperature Range {deltaC}
+     47     99063.,                  !- Barometric Pressure {Pa}
+     48     4.9,                     !- Wind Speed {m/s}
+     49     270,                     !- Wind Direction {deg}
+     50     No,                      !- Rain Indicator
+     51     No,                      !- Snow Indicator
+     52     No,                      !- Daylight Saving Time Indicator
+     53     ASHRAEClearSky,          !- Solar Model Indicator
+     54     ,                        !- Beam Solar Day Schedule Name
+     55     ,                        !- Diffuse Solar Day Schedule Name
+     56     ,                        !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+     57     ,                        !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+     58     0.0;                     !- Sky Clearness
+     59 SizingPeriod:DesignDay,
+     60     CHICAGO_IL_USA Annual Cooling 1% Design Conditions DB/MCWB,  !- Name
+     61     7,                       !- Month
+     62     21,                      !- Day of Month
+     63     SummerDesignDay,         !- Day Type
+     64     31.5,                    !- Maximum Dry-Bulb Temperature {C}
+     65     10.7,                    !- Daily Dry-Bulb Temperature Range {deltaC}
+     66     ,                        !- Dry-Bulb Temperature Range Modifier Type
+     67     ,                        !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+     68     Wetbulb,                 !- Humidity Condition Type
+     69     23.0,                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+     70     ,                        !- Humidity Condition Day Schedule Name
+     71     ,                        !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+     72     ,                        !- Enthalpy at Maximum Dry-Bulb {J/kg}
+     73     ,                        !- Daily Wet-Bulb Temperature Range {deltaC}
+     74     99063.,                  !- Barometric Pressure {Pa}
+     75     5.3,                     !- Wind Speed {m/s}
+     76     230,                     !- Wind Direction {deg}
+     77     No,                      !- Rain Indicator
+     78     No,                      !- Snow Indicator
+     79     No,                      !- Daylight Saving Time Indicator
+     80     ASHRAEClearSky,          !- Solar Model Indicator
+     81     ,                        !- Beam Solar Day Schedule Name
+     82     ,                        !- Diffuse Solar Day Schedule Name
+     83     ,                        !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+     84     ,                        !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+     85     1.0;                     !- Sky Clearness
+     86 RunPeriod,
+     87     ,                        !- Name
+     88 1,
+     89 1,
+     90 12,
+     91 31,
+     92 TUESDAY,
+     93     Yes,                     !- Use Weather File Holidays and Special Days
+     94     Yes,                     !- Use Weather File Daylight Saving Period
+     95     No,                      !- Apply Weekend Holiday Rule
+     96     Yes,                     !- Use Weather File Rain Indicators
+     97     Yes;                     !- Use Weather File Snow Indicators
+     98 Site:GroundTemperature:BuildingSurface,
+     99     20.03,                   !- January Ground Temperature {C}
+    100     20.03,                   !- February Ground Temperature {C}
+    101     20.13,                   !- March Ground Temperature {C}
+    102     20.30,                   !- April Ground Temperature {C}
+    103     20.43,                   !- May Ground Temperature {C}
+    104     20.52,                   !- June Ground Temperature {C}
+    105     20.62,                   !- July Ground Temperature {C}
+    106     20.77,                   !- August Ground Temperature {C}
+    107     20.78,                   !- September Ground Temperature {C}
+    108     20.55,                   !- October Ground Temperature {C}
+    109     20.44,                   !- November Ground Temperature {C}
+    110     20.20;                   !- December Ground Temperature {C}
+    111 ScheduleTypeLimits,
+    112     Any Number;              !- Name
+    113 ScheduleTypeLimits,
+    114     HVACTemplate Any Number; !- Name
+    115 ScheduleTypeLimits,
+    116     Fraction,                !- Name
+    117     0.0,                     !- Lower Limit Value
+    118     1.0,                     !- Upper Limit Value
+    119     CONTINUOUS;              !- Numeric Type
+    120 ScheduleTypeLimits,
+    121     Temperature,             !- Name
+    122     -60,                     !- Lower Limit Value
+    123     200,                     !- Upper Limit Value
+    124     CONTINUOUS,              !- Numeric Type
+    125     Temperature;             !- Unit Type
+    126 ScheduleTypeLimits,
+    127     Control Type,            !- Name
+    128     0,                       !- Lower Limit Value
+    129     4,                       !- Upper Limit Value
+    130     DISCRETE;                !- Numeric Type
+    131 ScheduleTypeLimits,
+    132     On/Off,                  !- Name
+    133     0,                       !- Lower Limit Value
+    134     1,                       !- Upper Limit Value
+    135     DISCRETE;                !- Numeric Type
+    136 Schedule:Compact,
+    137     RadiantSystemSched,      !- Name
+    138     FRACTION,                !- Schedule Type Limits Name
+    139     Through: 3/30,           !- Field 1
+    140     For: Alldays,            !- Field 2
+    141     Until: 24:00,            !- Field 3
+    142     1.00,                    !- Field 4
+    143     Through: 10/31,          !- Field 5
+    144     For: Alldays,            !- Field 6
+    145     Until: 24:00,            !- Field 7
+    146     1,                       !- Field 8
+    147     Through: 12/31,          !- Field 9
+    148     For: Alldays,            !- Field 10
+    149     Until: 24:00,            !- Field 11
+    150     1;                       !- Field 12
+    151 Schedule:Compact,
+    152     HW LOOP TEMP SCHEDULE,   !- Name
+    153     TEMPERATURE,             !- Schedule Type Limits Name
+    154     Through: 12/31,          !- Field 1
+    155     For: Alldays,            !- Field 2
+    156     Until: 24:00,            !- Field 3
+    157     30;                      !- Field 4
+    158 Schedule:Compact,
+    159     RADHEATHIGHWATERTEMP,    !- Name
+    160     TEMPERATURE,             !- Schedule Type Limits Name
+    161     Through: 12/31,          !- Field 1
+    162     For: Alldays,            !- Field 2
+    163     Until: 24:00,            !- Field 3
+    164     30;                      !- Field 4
+    165 Schedule:Compact,
+    166     RADHEATLOWWATERTEMP,     !- Name
+    167     TEMPERATURE,             !- Schedule Type Limits Name
+    168     Through: 12/31,          !- Field 1
+    169     For: Alldays,            !- Field 2
+    170     Until: 24:00,            !- Field 3
+    171     22;                      !- Field 4
+    172 Schedule:Compact,
+    173     RADHEATHIGHCONTROLTEMP,  !- Name
+    174     TEMPERATURE,             !- Schedule Type Limits Name
+    175     Through: 12/31,          !- Field 1
+    176     For: Alldays,            !- Field 2
+    177     Until: 24:00,            !- Field 3
+    178     22;                      !- Field 4
+    179 Schedule:Compact,
+    180     RADHEATLOWCONTROLTEMP,   !- Name
+    181     TEMPERATURE,             !- Schedule Type Limits Name
+    182     Through: 12/31,          !- Field 1
+    183     For: Alldays,            !- Field 2
+    184     Until: 24:00,            !- Field 3
+    185     20;                      !- Field 4
+    186 Schedule:Compact,
+    187     on,                      !- Name
+    188     On/Off,                  !- Schedule Type Limits Name
+    189     Through: 12/31,          !- Field 1
+    190     For: Alldays,            !- Field 2
+    191     Until: 24:00,            !- Field 3
+    192     1;                       !- Field 4
+    193 Material,
+    194     Wood Siding,             !- Name
+    195     MediumSmooth,            !- Roughness
+    196     0.01,                    !- Thickness {m}
+    197     0.11,                    !- Conductivity {W/m-K}
+    198     511,                     !- Density {kg/m3}
+    199     1210,                    !- Specific Heat {J/kg-K}
+    200     0.9,                     !- Thermal Absorptance
+    201     0.7,                     !- Solar Absorptance
+    202     0.7;                     !- Visible Absorptance
+    203 Material,
+    204     Steal Frame Ins,         !- Name
+    205     MediumRough,             !- Roughness
+    206     0.087,                   !- Thickness {m}
+    207     0.049,                   !- Conductivity {W/m-K}
+    208     265,                     !- Density {kg/m3}
+    209     836.8;                   !- Specific Heat {J/kg-K}
+    210 Material,
+    211     Gyp Board,               !- Name
+    212     MediumSmooth,            !- Roughness
+    213     0.0127,                  !- Thickness {m}
+    214     0.16,                    !- Conductivity {W/m-K}
+    215     784,                     !- Density {kg/m3}
+    216     830,                     !- Specific Heat {J/kg-K}
+    217     0.9,                     !- Thermal Absorptance
+    218     0.7,                     !- Solar Absorptance
+    219     0.7;                     !- Visible Absorptance
+    220 Material,
+    221     Glass Fiber,             !- Name
+    222     MediumRough,             !- Roughness
+    223     0.05,                    !- Thickness {m}
+    224     0.036,                   !- Conductivity {W/m-K}
+    225     140,                     !- Density {kg/m3}
+    226     960,                     !- Specific Heat {J/kg-K}
+    227     0.9,                     !- Thermal Absorptance
+    228     0.7,                     !- Solar Absorptance
+    229     0.7;                     !- Visible Absorptance
+    230 Material,
+    231     Floor Concrete,          !- Name
+    232     MediumSmooth,            !- Roughness
+    233     0.0508,                  !- Thickness {m}
+    234     1.311,                   !- Conductivity {W/m-K}
+    235     2240,                    !- Density {kg/m3}
+    236     836.8,                   !- Specific Heat {J/kg-K}
+    237     0.9,                     !- Thermal Absorptance
+    238     0.7,                     !- Solar Absorptance
+    239     0.7;                     !- Visible Absorptance
+    240 Material,
+    241     Insulation Con Floor,    !- Name
+    242     MediumRough,             !- Roughness
+    243     0.05,                    !- Thickness {m}
+    244     0.03,                    !- Conductivity {W/m-K}
+    245     40,                      !- Density {kg/m3}
+    246     1200,                    !- Specific Heat {J/kg-K}
+    247     0.9,                     !- Thermal Absorptance
+    248     0.7,                     !- Solar Absorptance
+    249     0.7;                     !- Visible Absorptance
+    250 Material,
+    251     Half Glass Fiber,        !- Name
+    252     MediumRough,             !- Roughness
+    253     0.025,                   !- Thickness {m}
+    254     0.036,                   !- Conductivity {W/m-K}
+    255     140,                     !- Density {kg/m3}
+    256     960,                     !- Specific Heat {J/kg-K}
+    257     0.9,                     !- Thermal Absorptance
+    258     0.7,                     !- Solar Absorptance
+    259     0.7;                     !- Visible Absorptance
+    260 WindowMaterial:Glazing,
+    261     CLEAR 3MM,               !- Name
+    262     SpectralAverage,         !- Optical Data Type
+    263     ,                        !- Window Glass Spectral Data Set Name
+    264     0.003,                   !- Thickness {m}
+    265     0.837,                   !- Solar Transmittance at Normal Incidence
+    266     0.075,                   !- Front Side Solar Reflectance at Normal Incidence
+    267     0.075,                   !- Back Side Solar Reflectance at Normal Incidence
+    268     0.898,                   !- Visible Transmittance at Normal Incidence
+    269     0.081,                   !- Front Side Visible Reflectance at Normal Incidence
+    270     0.081,                   !- Back Side Visible Reflectance at Normal Incidence
+    271     0.0,                     !- Infrared Transmittance at Normal Incidence
+    272     0.84,                    !- Front Side Infrared Hemispherical Emissivity
+    273     0.84,                    !- Back Side Infrared Hemispherical Emissivity
+    274     0.9;                     !- Conductivity {W/m-K}
+    275 WindowMaterial:Gas,
+    276     AIR 13MM,                !- Name
+    277     Air,                     !- Gas Type
+    278     0.0127;                  !- Thickness {m}
+    279 Construction,
+    280     conExtWal,               !- Name
+    281     Wood Siding,             !- Outside Layer
+    282     Steal Frame Ins,         !- Layer 2
+    283     Gyp Board;               !- Layer 3
+    284 Construction,
+    285     conIntWal,               !- Name
+    286     Gyp Board,               !- Outside Layer
+    287     Glass Fiber,             !- Layer 2
+    288     Gyp Board;               !- Layer 3
+    289 Construction,
+    290     souWin,                  !- Name
+    291     CLEAR 3MM,               !- Outside Layer
+    292     AIR 13MM,                !- Layer 2
+    293     CLEAR 3MM;               !- Layer 3
+    294 Construction,
+    295     conIntWalNor,            !- Name
+    296     Half Glass Fiber,        !- Outside Layer
+    297     Gyp Board;               !- Layer 2
+    298 Construction,
+    299     conFloor,                !- Name
+    300     Floor Concrete,          !- Outside Layer
+    301     Floor Concrete,          !- Layer 2
+    302     Insulation Con Floor,    !- Layer 3
+    303     Floor Concrete,          !- Layer 4
+    304     Floor Concrete;          !- Layer 5
+    305 Construction,
+    306     conCeiling,              !- Name
+    307     Floor Concrete,          !- Outside Layer
+    308     Floor Concrete,          !- Layer 2
+    309     Insulation Con Floor,    !- Layer 3
+    310     Floor Concrete,          !- Layer 4
+    311     Floor Concrete;          !- Layer 5
+    312 GlobalGeometryRules,
+    313     UpperLeftCorner,         !- Starting Vertex Position
+    314     CounterClockWise,        !- Vertex Entry Direction
+    315     Relative;                !- Coordinate System
+    316 Zone,
+    317     Zone 1,                  !- Name
+    318     -0,                      !- Direction of Relative North {deg}
+    319     0.880596000000003,       !- X Origin {m}
+    320     0.939907999999999,       !- Y Origin {m}
+    321     0,                       !- Z Origin {m}
+    322     ,                        !- Type
+    323     1;                       !- Multiplier
+    324 Zone,
+    325     Zone 2,                  !- Name
+    326     -0,                      !- Direction of Relative North {deg}
+    327     9.910596,                !- X Origin {m}
+    328     0.939907999999999,       !- Y Origin {m}
+    329     0;                       !- Z Origin {m}
+    330 BuildingSurface:Detailed,
+    331     Zone Surface Ceiling,    !- Name
+    332     Ceiling,                 !- Surface Type
+    333     conCeiling,              !- Construction Name
+    334     Zone 1,                  !- Zone Name
+    335     Surface,                 !- Outside Boundary Condition
+    336     Zone Surface Floor 1,    !- Outside Boundary Condition Object
+    337     NoSun,                   !- Sun Exposure
+    338     NoWind,                  !- Wind Exposure
+    339     ,                        !- View Factor to Ground
+    340     ,                        !- Number of Vertices
+    341     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    342     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    343     2.7,                     !- Vertex 1 Z-coordinate {m}
+    344     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    345     5.722203575577,          !- Vertex 2 Y-coordinate {m}
+    346     2.7,                     !- Vertex 2 Z-coordinate {m}
+    347     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    348     5.722203575577,          !- Vertex 3 Y-coordinate {m}
+    349     2.7,                     !- Vertex 3 Z-coordinate {m}
+    350     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    351     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    352     2.7;                     !- Vertex 4 Z-coordinate {m}
+    353 BuildingSurface:Detailed,
+    354     Zone Surface East,       !- Name
+    355     Wall,                    !- Surface Type
+    356     conIntWal,               !- Construction Name
+    357     Zone 1,                  !- Zone Name
+    358     Surface,                 !- Outside Boundary Condition
+    359     Zone Surface West 1,     !- Outside Boundary Condition Object
+    360     NoSun,                   !- Sun Exposure
+    361     NoWind,                  !- Wind Exposure
+    362     ,                        !- View Factor to Ground
+    363     ,                        !- Number of Vertices
+    364     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    365     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    366     2.7,                     !- Vertex 1 Z-coordinate {m}
+    367     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    368     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    369     0,                       !- Vertex 2 Z-coordinate {m}
+    370     8.575701114263,          !- Vertex 3 X-coordinate {m}
+    371     5.722203575577,          !- Vertex 3 Y-coordinate {m}
+    372     0,                       !- Vertex 3 Z-coordinate {m}
+    373     8.575701114263,          !- Vertex 4 X-coordinate {m}
+    374     5.722203575577,          !- Vertex 4 Y-coordinate {m}
+    375     2.7;                     !- Vertex 4 Z-coordinate {m}
+    376 BuildingSurface:Detailed,
+    377     Zone Surface Floor,      !- Name
+    378     Floor,                   !- Surface Type
+    379     conFloor,                !- Construction Name
+    380     Zone 1,                  !- Zone Name
+    381     Ground,                  !- Outside Boundary Condition
+    382     ,                        !- Outside Boundary Condition Object
+    383     NoSun,                   !- Sun Exposure
+    384     NoWind,                  !- Wind Exposure
+    385     0,                       !- View Factor to Ground
+    386     ,                        !- Number of Vertices
+    387     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    388     5.722203575577,          !- Vertex 1 Y-coordinate {m}
+    389     0,                       !- Vertex 1 Z-coordinate {m}
+    390     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    391     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    392     0,                       !- Vertex 2 Z-coordinate {m}
+    393     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    394     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    395     0,                       !- Vertex 3 Z-coordinate {m}
+    396     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    397     5.722203575577,          !- Vertex 4 Y-coordinate {m}
+    398     0;                       !- Vertex 4 Z-coordinate {m}
+    399 BuildingSurface:Detailed,
+    400     Zone Surface North,      !- Name
+    401     Wall,                    !- Surface Type
+    402     conIntWalNor,            !- Construction Name
+    403     Zone 1,                  !- Zone Name
+    404     Outdoors,                !- Outside Boundary Condition
+    405     ,                        !- Outside Boundary Condition Object
+    406     SunExposed,              !- Sun Exposure
+    407     WindExposed,             !- Wind Exposure
+    408     ,                        !- View Factor to Ground
+    409     ,                        !- Number of Vertices
+    410     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    411     5.722203575577,          !- Vertex 1 Y-coordinate {m}
+    412     2.7,                     !- Vertex 1 Z-coordinate {m}
+    413     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    414     5.722203575577,          !- Vertex 2 Y-coordinate {m}
+    415     0,                       !- Vertex 2 Z-coordinate {m}
+    416     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    417     5.722203575577,          !- Vertex 3 Y-coordinate {m}
+    418     0,                       !- Vertex 3 Z-coordinate {m}
+    419     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    420     5.722203575577,          !- Vertex 4 Y-coordinate {m}
+    421     2.7;                     !- Vertex 4 Z-coordinate {m}
+    422 BuildingSurface:Detailed,
+    423     Zone Surface South,      !- Name
+    424     Wall,                    !- Surface Type
+    425     conExtWal,               !- Construction Name
+    426     Zone 1,                  !- Zone Name
+    427     Outdoors,                !- Outside Boundary Condition
+    428     ,                        !- Outside Boundary Condition Object
+    429     SunExposed,              !- Sun Exposure
+    430     WindExposed,             !- Wind Exposure
+    431     ,                        !- View Factor to Ground
+    432     ,                        !- Number of Vertices
+    433     0.575701114263,          !- Vertex 1 X-coordinate {m}
+    434     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    435     2.7,                     !- Vertex 1 Z-coordinate {m}
+    436     0.575701114263,          !- Vertex 2 X-coordinate {m}
+    437     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    438     0,                       !- Vertex 2 Z-coordinate {m}
+    439     8.575701114263,          !- Vertex 3 X-coordinate {m}
+    440     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    441     0,                       !- Vertex 3 Z-coordinate {m}
+    442     8.575701114263,          !- Vertex 4 X-coordinate {m}
+    443     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    444     2.7;                     !- Vertex 4 Z-coordinate {m}
+    445 BuildingSurface:Detailed,
+    446     Zone Surface West,       !- Name
+    447     Wall,                    !- Surface Type
+    448     conIntWal,               !- Construction Name
+    449     Zone 1,                  !- Zone Name
+    450     Outdoors,                !- Outside Boundary Condition
+    451     ,                        !- Outside Boundary Condition Object
+    452     SunExposed,              !- Sun Exposure
+    453     WindExposed,             !- Wind Exposure
+    454     ,                        !- View Factor to Ground
+    455     ,                        !- Number of Vertices
+    456     0.575701114263,          !- Vertex 1 X-coordinate {m}
+    457     5.722203575577,          !- Vertex 1 Y-coordinate {m}
+    458     2.7,                     !- Vertex 1 Z-coordinate {m}
+    459     0.575701114263,          !- Vertex 2 X-coordinate {m}
+    460     5.722203575577,          !- Vertex 2 Y-coordinate {m}
+    461     0,                       !- Vertex 2 Z-coordinate {m}
+    462     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    463     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    464     0,                       !- Vertex 3 Z-coordinate {m}
+    465     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    466     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    467     2.7;                     !- Vertex 4 Z-coordinate {m}
+    468 BuildingSurface:Detailed,
+    469     Zone Surface Ceiling 1,  !- Name
+    470     Roof,                    !- Surface Type
+    471     conCeiling,              !- Construction Name
+    472     Zone 2,                  !- Zone Name
+    473     Outdoors,                !- Outside Boundary Condition
+    474     ,                        !- Outside Boundary Condition Object
+    475     SunExposed,              !- Sun Exposure
+    476     WindExposed,             !- Wind Exposure
+    477     ,                        !- View Factor to Ground
+    478     ,                        !- Number of Vertices
+    479     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    480     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    481     2.7,                     !- Vertex 1 Z-coordinate {m}
+    482     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    483     5.722203575577,          !- Vertex 2 Y-coordinate {m}
+    484     2.7,                     !- Vertex 2 Z-coordinate {m}
+    485     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    486     5.722203575577,          !- Vertex 3 Y-coordinate {m}
+    487     2.7,                     !- Vertex 3 Z-coordinate {m}
+    488     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    489     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    490     2.7;                     !- Vertex 4 Z-coordinate {m}
+    491 BuildingSurface:Detailed,
+    492     Zone Surface East 1,     !- Name
+    493     Wall,                    !- Surface Type
+    494     conIntWal,               !- Construction Name
+    495     Zone 2,                  !- Zone Name
+    496     Outdoors,                !- Outside Boundary Condition
+    497     ,                        !- Outside Boundary Condition Object
+    498     SunExposed,              !- Sun Exposure
+    499     WindExposed,             !- Wind Exposure
+    500     ,                        !- View Factor to Ground
+    501     ,                        !- Number of Vertices
+    502     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    503     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    504     2.7,                     !- Vertex 1 Z-coordinate {m}
+    505     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    506     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    507     0,                       !- Vertex 2 Z-coordinate {m}
+    508     8.575701114263,          !- Vertex 3 X-coordinate {m}
+    509     5.722203575577,          !- Vertex 3 Y-coordinate {m}
+    510     0,                       !- Vertex 3 Z-coordinate {m}
+    511     8.575701114263,          !- Vertex 4 X-coordinate {m}
+    512     5.722203575577,          !- Vertex 4 Y-coordinate {m}
+    513     2.7;                     !- Vertex 4 Z-coordinate {m}
+    514 BuildingSurface:Detailed,
+    515     Zone Surface Floor 1,    !- Name
+    516     Floor,                   !- Surface Type
+    517     conFloor,                !- Construction Name
+    518     Zone 2,                  !- Zone Name
+    519     Surface,                 !- Outside Boundary Condition
+    520     Zone Surface Ceiling,    !- Outside Boundary Condition Object
+    521     NoSun,                   !- Sun Exposure
+    522     NoWind,                  !- Wind Exposure
+    523     0,                       !- View Factor to Ground
+    524     ,                        !- Number of Vertices
+    525     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    526     5.722203575577,          !- Vertex 1 Y-coordinate {m}
+    527     0,                       !- Vertex 1 Z-coordinate {m}
+    528     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    529     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    530     0,                       !- Vertex 2 Z-coordinate {m}
+    531     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    532     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    533     0,                       !- Vertex 3 Z-coordinate {m}
+    534     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    535     5.722203575577,          !- Vertex 4 Y-coordinate {m}
+    536     0;                       !- Vertex 4 Z-coordinate {m}
+    537 BuildingSurface:Detailed,
+    538     Zone Surface North 1,    !- Name
+    539     Wall,                    !- Surface Type
+    540     conIntWalNor,            !- Construction Name
+    541     Zone 2,                  !- Zone Name
+    542     Outdoors,                !- Outside Boundary Condition
+    543     ,                        !- Outside Boundary Condition Object
+    544     SunExposed,              !- Sun Exposure
+    545     WindExposed,             !- Wind Exposure
+    546     ,                        !- View Factor to Ground
+    547     ,                        !- Number of Vertices
+    548     8.575701114263,          !- Vertex 1 X-coordinate {m}
+    549     5.722203575577,          !- Vertex 1 Y-coordinate {m}
+    550     2.7,                     !- Vertex 1 Z-coordinate {m}
+    551     8.575701114263,          !- Vertex 2 X-coordinate {m}
+    552     5.722203575577,          !- Vertex 2 Y-coordinate {m}
+    553     0,                       !- Vertex 2 Z-coordinate {m}
+    554     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    555     5.722203575577,          !- Vertex 3 Y-coordinate {m}
+    556     0,                       !- Vertex 3 Z-coordinate {m}
+    557     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    558     5.722203575577,          !- Vertex 4 Y-coordinate {m}
+    559     2.7;                     !- Vertex 4 Z-coordinate {m}
+    560 BuildingSurface:Detailed,
+    561     Zone Surface South 1,    !- Name
+    562     Wall,                    !- Surface Type
+    563     conExtWal,               !- Construction Name
+    564     Zone 2,                  !- Zone Name
+    565     Outdoors,                !- Outside Boundary Condition
+    566     ,                        !- Outside Boundary Condition Object
+    567     SunExposed,              !- Sun Exposure
+    568     WindExposed,             !- Wind Exposure
+    569     ,                        !- View Factor to Ground
+    570     ,                        !- Number of Vertices
+    571     0.575701114263,          !- Vertex 1 X-coordinate {m}
+    572     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    573     2.7,                     !- Vertex 1 Z-coordinate {m}
+    574     0.575701114263,          !- Vertex 2 X-coordinate {m}
+    575     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    576     0,                       !- Vertex 2 Z-coordinate {m}
+    577     8.575701114263,          !- Vertex 3 X-coordinate {m}
+    578     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    579     0,                       !- Vertex 3 Z-coordinate {m}
+    580     8.575701114263,          !- Vertex 4 X-coordinate {m}
+    581     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    582     2.7;                     !- Vertex 4 Z-coordinate {m}
+    583 BuildingSurface:Detailed,
+    584     Zone Surface West 1,     !- Name
+    585     Wall,                    !- Surface Type
+    586     conIntWal,               !- Construction Name
+    587     Zone 2,                  !- Zone Name
+    588     Surface,                 !- Outside Boundary Condition
+    589     Zone Surface East,       !- Outside Boundary Condition Object
+    590     NoSun,                   !- Sun Exposure
+    591     NoWind,                  !- Wind Exposure
+    592     ,                        !- View Factor to Ground
+    593     ,                        !- Number of Vertices
+    594     0.575701114263,          !- Vertex 1 X-coordinate {m}
+    595     5.722203575577,          !- Vertex 1 Y-coordinate {m}
+    596     2.7,                     !- Vertex 1 Z-coordinate {m}
+    597     0.575701114263,          !- Vertex 2 X-coordinate {m}
+    598     5.722203575577,          !- Vertex 2 Y-coordinate {m}
+    599     0,                       !- Vertex 2 Z-coordinate {m}
+    600     0.575701114263,          !- Vertex 3 X-coordinate {m}
+    601     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    602     0,                       !- Vertex 3 Z-coordinate {m}
+    603     0.575701114263,          !- Vertex 4 X-coordinate {m}
+    604     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    605     2.7;                     !- Vertex 4 Z-coordinate {m}
+    606 FenestrationSurface:Detailed,
+    607     Sub Surface South Window,!- Name
+    608     Window,                  !- Surface Type
+    609     souWin,                  !- Construction Name
+    610     Zone Surface South,      !- Building Surface Name
+    611     ,                        !- Outside Boundary Condition Object
+    612     ,                        !- View Factor to Ground
+    613     ,                        !- Shading Control Name
+    614     ,                        !- Frame and Divider Name
+    615     ,                        !- Multiplier
+    616     ,                        !- Number of Vertices
+    617     1.575701114263,          !- Vertex 1 X-coordinate {m}
+    618     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    619     1.5,                     !- Vertex 1 Z-coordinate {m}
+    620     1.575701114263,          !- Vertex 2 X-coordinate {m}
+    621     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    622     0.5,                     !- Vertex 2 Z-coordinate {m}
+    623     7.575701114263,          !- Vertex 3 X-coordinate {m}
+    624     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    625     0.5,                     !- Vertex 3 Z-coordinate {m}
+    626     7.575701114263,          !- Vertex 4 X-coordinate {m}
+    627     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    628     1.5;                     !- Vertex 4 Z-coordinate {m}
+    629 FenestrationSurface:Detailed,
+    630     Sub Surface South Window 1,  !- Name
+    631     Window,                  !- Surface Type
+    632     souWin,                  !- Construction Name
+    633     Zone Surface South 1,    !- Building Surface Name
+    634     ,                        !- Outside Boundary Condition Object
+    635     ,                        !- View Factor to Ground
+    636     ,                        !- Shading Control Name
+    637     ,                        !- Frame and Divider Name
+    638     ,                        !- Multiplier
+    639     ,                        !- Number of Vertices
+    640     1.575701114263,          !- Vertex 1 X-coordinate {m}
+    641     -0.277796424423,         !- Vertex 1 Y-coordinate {m}
+    642     1.5,                     !- Vertex 1 Z-coordinate {m}
+    643     1.575701114263,          !- Vertex 2 X-coordinate {m}
+    644     -0.277796424423,         !- Vertex 2 Y-coordinate {m}
+    645     0.5,                     !- Vertex 2 Z-coordinate {m}
+    646     7.575701114263,          !- Vertex 3 X-coordinate {m}
+    647     -0.277796424423,         !- Vertex 3 Y-coordinate {m}
+    648     0.5,                     !- Vertex 3 Z-coordinate {m}
+    649     7.575701114263,          !- Vertex 4 X-coordinate {m}
+    650     -0.277796424423,         !- Vertex 4 Y-coordinate {m}
+    651     1.5;                     !- Vertex 4 Z-coordinate {m}
+    652 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    653     North Wall Heat Gain,    !- Name
+    654     Zone Surface North,      !- Surface Name
+    655     conIntWalNor,            !- Construction Name
+    656     North Wall SSG;          !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    657 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    658     East Wall Heat Gain,     !- Name
+    659     Zone Surface East,       !- Surface Name
+    660     conIntWal,               !- Construction Name
+    661     East Wall SSG;           !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    662 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    663     South Wall Heat Gain,    !- Name
+    664     Zone Surface South,      !- Surface Name
+    665     conExtWal,               !- Construction Name
+    666     South Wall SSG;          !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    667 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    668     West Wall Heat Gain,     !- Name
+    669     Zone Surface West,       !- Surface Name
+    670     conIntWal,               !- Construction Name
+    671     West Wall SSG;           !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    672 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    673     Floor Heat Gain,         !- Name
+    674     Zone Surface Floor,      !- Surface Name
+    675     conFloor,                !- Construction Name
+    676     Floor SSG;               !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    677 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    678     Ceiling Heat Gain,       !- Name
+    679     Zone Surface Ceiling,    !- Surface Name
+    680     conCeiling,              !- Construction Name
+    681     Ceiling SSG;             !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    682 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    683     South Window Heat Gain,  !- Name
+    684     Sub Surface South Window,!- Surface Name
+    685     souWin,                  !- Construction Name
+    686     South Window SSG;        !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    687 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    688     North Wall Heat Gain 1,  !- Name
+    689     Zone Surface North 1,    !- Surface Name
+    690     conIntWalNor,            !- Construction Name
+    691     North Wall SSG 1;        !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    692 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    693     East Wall Heat Gain 1,   !- Name
+    694     Zone Surface East 1,     !- Surface Name
+    695     conIntWal,               !- Construction Name
+    696     East Wall SSG 1;         !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    697 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    698     South Wall Heat Gain 1,  !- Name
+    699     Zone Surface South 1,    !- Surface Name
+    700     conExtWal,               !- Construction Name
+    701     South Wall SSG 1;        !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    702 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    703     West Wall Heat Gain 1,   !- Name
+    704     Zone Surface West 1,     !- Surface Name
+    705     conIntWal,               !- Construction Name
+    706     West Wall SSG 1;         !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    707 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    708     Floor Heat Gain 1,       !- Name
+    709     Zone Surface Floor 1,    !- Surface Name
+    710     conFloor,                !- Construction Name
+    711     Floor SSG 1;             !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    712 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    713     Ceiling Heat Gain 1,     !- Name
+    714     Zone Surface Ceiling 1,  !- Surface Name
+    715     conCeiling,              !- Construction Name
+    716     Ceiling SSG 1;           !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    717 SurfaceProperty:ConvectiveHeatGainInsideSurface,
+    718     South Window Heat Gain 1,!- Name
+    719     Sub Surface South Window 1,  !- Surface Name
+    720     souWin,                  !- Construction Name
+    721     South Window SSG 1;      !- Inside Surface Incident Sun Solar Radiation Schedule Name
+    722 ElectricEquipment,
+    723     equip,                   !- Name
+    724     Zone 1,                  !- Zone or ZoneList Name
+    725     on,                      !- Schedule Name
+    726     Watts/Area,              !- Design Level Calculation Method
+    727     ,                        !- Design Level {W}
+    728     4.1667,                  !- Watts per Zone Floor Area {W/m2}
+    729     ,                        !- Watts per Person {W/person}
+    730     0,                       !- Fraction Latent
+    731     1.0,                     !- Fraction Radiant
+    732     0,                       !- Fraction Lost
+    733     General;                 !- End-Use Subcategory
+    734 ElectricEquipment,
+    735     equip 1,                 !- Name
+    736     Zone 2,                  !- Zone or ZoneList Name
+    737     on,                      !- Schedule Name
+    738     Watts/Area,              !- Design Level Calculation Method
+    739     ,                        !- Design Level {W}
+    740     4.1667,                  !- Watts per Zone Floor Area {W/m2}
+    741     ,                        !- Watts per Person {W/person}
+    742     0,                       !- Fraction Latent
+    743     1.0,                     !- Fraction Radiant
+    744     0,                       !- Fraction Lost
+    745     General;                 !- End-Use Subcategory
+    746 ExternalInterface,
+    747     FunctionalMockupUnitExport;  !- Name of External Interface
+    748 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    749     Zone Surface North,      !- Output:Variable Index Key Name
+    750     Surface Inside Face Temperature,  !- Output:Variable Name
+    751     TNor;                    !- FMU Variable Name
+    752 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    753     Zone Surface South,      !- Output:Variable Index Key Name
+    754     Surface Inside Face Temperature,  !- Output:Variable Name
+    755     TSou;                    !- FMU Variable Name
+    756 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    757     Sub Surface South Window,!- Output:Variable Index Key Name
+    758     Surface Inside Face Temperature,  !- Output:Variable Name
+    759     TSouWin;                 !- FMU Variable Name
+    760 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    761     Zone Surface West,       !- Output:Variable Index Key Name
+    762     Surface Inside Face Temperature,  !- Output:Variable Name
+    763     TWes;                    !- FMU Variable Name
+    764 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    765     Zone Surface East,       !- Output:Variable Index Key Name
+    766     Surface Inside Face Temperature,  !- Output:Variable Name
+    767     TEas;                    !- FMU Variable Name
+    768 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    769     Zone Surface Floor,      !- Output:Variable Index Key Name
+    770     Surface Inside Face Temperature,  !- Output:Variable Name
+    771     TFlo;                    !- FMU Variable Name
+    772 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    773     Zone Surface Ceiling,    !- Output:Variable Index Key Name
+    774     Surface Inside Face Temperature,  !- Output:Variable Name
+    775     TCei;                    !- FMU Variable Name
+    776 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    777     Zone Surface North 1,    !- Output:Variable Index Key Name
+    778     Surface Inside Face Temperature,  !- Output:Variable Name
+    779     TNor1;                   !- FMU Variable Name
+    780 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    781     Zone Surface South 1,    !- Output:Variable Index Key Name
+    782     Surface Inside Face Temperature,  !- Output:Variable Name
+    783     TSou1;                   !- FMU Variable Name
+    784 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    785     Sub Surface South Window 1,  !- Output:Variable Index Key Name
+    786     Surface Inside Face Temperature,  !- Output:Variable Name
+    787     TSouWin1;                !- FMU Variable Name
+    788 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    789     Zone Surface West 1,     !- Output:Variable Index Key Name
+    790     Surface Inside Face Temperature,  !- Output:Variable Name
+    791     TWes1;                   !- FMU Variable Name
+    792 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    793     Zone Surface East 1,     !- Output:Variable Index Key Name
+    794     Surface Inside Face Temperature,  !- Output:Variable Name
+    795     TEas1;                   !- FMU Variable Name
+    796 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    797     Zone Surface Floor 1,    !- Output:Variable Index Key Name
+    798     Surface Inside Face Temperature,  !- Output:Variable Name
+    799     TFlo1;                   !- FMU Variable Name
+    800 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    801     Zone Surface Ceiling 1,  !- Output:Variable Index Key Name
+    802     Surface Inside Face Temperature,  !- Output:Variable Name
+    803     TCei1;                   !- FMU Variable Name
+    804 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    805     Environment,             !- Output:Variable Index Key Name
+    806     Site Outdoor Air Drybulb Temperature,  !- Output:Variable Name
+    807     TOut;                    !- FMU Variable Name
+    808 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    809     Environment,             !- Output:Variable Index Key Name
+    810     Site Outdoor Air Relative Humidity,  !- Output:Variable Name
+    811     phiOut;                    !- FMU Variable Name
+    812 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    813     Zone 1,                  !- Output:Variable Index Key Name
+    814     Zone Mean Air Temperature,  !- Output:Variable Name
+    815     TRooAir;                 !- FMU Variable Name
+    816 ExternalInterface:FunctionalMockupUnitExport:From:Variable,
+    817     Zone 2,                  !- Output:Variable Index Key Name
+    818     Zone Mean Air Temperature,  !- Output:Variable Name
+    819     TRooAir1;                !- FMU Variable Name
+    820 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    821     North Wall SSG,          !- Schedule Name
+    822     Fraction,                !- Schedule Type Limits Names
+    823     QNor,                    !- FMU Variable Name
+    824     0;                       !- Initial Value
+    825 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    826     South Wall SSG,          !- Schedule Name
+    827     Fraction,                !- Schedule Type Limits Names
+    828     QSou,                    !- FMU Variable Name
+    829     0;                       !- Initial Value
+    830 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    831     East Wall SSG,           !- Schedule Name
+    832     Fraction,                !- Schedule Type Limits Names
+    833     QEas,                    !- FMU Variable Name
+    834     0;                       !- Initial Value
+    835 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    836     West Wall SSG,           !- Schedule Name
+    837     Fraction,                !- Schedule Type Limits Names
+    838     QWes,                    !- FMU Variable Name
+    839     0;                       !- Initial Value
+    840 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    841     FLOOR SSG,               !- Schedule Name
+    842     Fraction,                !- Schedule Type Limits Names
+    843     QFlo,                    !- FMU Variable Name
+    844     0;                       !- Initial Value
+    845 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    846     CEILING SSG,             !- Schedule Name
+    847     Fraction,                !- Schedule Type Limits Names
+    848     QCei,                    !- FMU Variable Name
+    849     0;                       !- Initial Value
+    850 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    851     SOUTH WINDOW SSG,        !- Schedule Name
+    852     Fraction,                !- Schedule Type Limits Names
+    853     QSouWin,                 !- FMU Variable Name
+    854     0;                       !- Initial Value
+    855 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    856     North Wall SSG 1,        !- Schedule Name
+    857     Fraction,                !- Schedule Type Limits Names
+    858     QNor1,                   !- FMU Variable Name
+    859     0;                       !- Initial Value
+    860 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    861     South Wall SSG 1,        !- Schedule Name
+    862     Fraction,                !- Schedule Type Limits Names
+    863     QSou1,                   !- FMU Variable Name
+    864     0;                       !- Initial Value
+    865 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    866     East Wall SSG 1,         !- Schedule Name
+    867     Fraction,                !- Schedule Type Limits Names
+    868     QEas1,                   !- FMU Variable Name
+    869     0;                       !- Initial Value
+    870 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    871     West Wall SSG 1,         !- Schedule Name
+    872     Fraction,                !- Schedule Type Limits Names
+    873     QWes1,                   !- FMU Variable Name
+    874     0;                       !- Initial Value
+    875 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    876     FLOOR SSG 1,             !- Schedule Name
+    877     Fraction,                !- Schedule Type Limits Names
+    878     QFlo1,                   !- FMU Variable Name
+    879     0;                       !- Initial Value
+    880 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    881     CEILING SSG 1,           !- Schedule Name
+    882     Fraction,                !- Schedule Type Limits Names
+    883     QCei1,                   !- FMU Variable Name
+    884     0;                       !- Initial Value
+    885 ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
+    886     SOUTH WINDOW SSG 1,      !- Schedule Name
+    887     Fraction,                !- Schedule Type Limits Names
+    888     QSouWin1,                !- FMU Variable Name
+    889     0;                       !- Initial Value
+    890 Output:VariableDictionary,
+    891     Regular;                 !- Key Field
+    892 Output:Table:SummaryReports,
+    893     AllSummary;              !- Report 1 Name
+    894 OutputControl:Table:Style,
+    895     HTML;                    !- Column Separator
+    896 Output:Variable,
+    897     Zone Surface North,      !- Key Value
+    898     Surface Inside Face Temperature,  !- Variable Name
+    899     Timestep;                !- Reporting Frequency
+    900 Output:Variable,
+    901     Zone Surface South,      !- Key Value
+    902     Surface Inside Face Temperature,  !- Variable Name
+    903     Timestep;                !- Reporting Frequency
+    904 Output:Variable,
+    905     Sub Surface South Window,!- Key Value
+    906     Surface Inside Face Temperature,  !- Variable Name
+    907     Timestep;                !- Reporting Frequency
+    908 Output:Variable,
+    909     Zone Surface West,       !- Key Value
+    910     Surface Inside Face Temperature,  !- Variable Name
+    911     Timestep;                !- Reporting Frequency
+    912 Output:Variable,
+    913     Zone Surface East,       !- Key Value
+    914     Surface Inside Face Temperature,  !- Variable Name
+    915     Timestep;                !- Reporting Frequency
+    916 Output:Variable,
+    917     Zone Surface Floor,      !- Key Value
+    918     Surface Inside Face Temperature,  !- Variable Name
+    919     Timestep;                !- Reporting Frequency
+    920 Output:Variable,
+    921     Zone Surface Ceiling,    !- Key Value
+    922     Surface Inside Face Temperature,  !- Variable Name
+    923     Timestep;                !- Reporting Frequency
+    924 Output:Variable,
+    925     Zone Surface North 1,    !- Key Value
+    926     Surface Inside Face Temperature,  !- Variable Name
+    927     Timestep;                !- Reporting Frequency
+    928 Output:Variable,
+    929     Zone Surface South 1,    !- Key Value
+    930     Surface Inside Face Temperature,  !- Variable Name
+    931     Timestep;                !- Reporting Frequency
+    932 Output:Variable,
+    933     Sub Surface South Window 1,  !- Key Value
+    934     Surface Inside Face Temperature,  !- Variable Name
+    935     Timestep;                !- Reporting Frequency
+    936 Output:Variable,
+    937     Zone Surface West 1,     !- Key Value
+    938     Surface Inside Face Temperature,  !- Variable Name
+    939     Timestep;                !- Reporting Frequency
+    940 Output:Variable,
+    941     Zone Surface East 1,     !- Key Value
+    942     Surface Inside Face Temperature,  !- Variable Name
+    943     Timestep;                !- Reporting Frequency
+    944 Output:Variable,
+    945     Zone Surface Floor 1,    !- Key Value
+    946     Surface Inside Face Temperature,  !- Variable Name
+    947     Timestep;                !- Reporting Frequency
+    948 Output:Variable,
+    949     Zone Surface Ceiling 1,  !- Key Value
+    950     Surface Inside Face Temperature,  !- Variable Name
+    951     Timestep;                !- Reporting Frequency
+    952 Output:Variable,
+    953     Environment,             !- Key Value
+    954     Site Outdoor Air Drybulb Temperature,  !- Variable Name
+    955     Timestep;                !- Reporting Frequency
+    956 Output:Variable,
+    957     Environment,             !- Key Value
+    958     Site Outdoor Air Relative Humidity,  !- Variable Name
+    959     Timestep;                !- Reporting Frequency
+    960 Output:Variable,
+    961     Zone 1,                  !- Key Value
+    962     Zone Mean Air Temperature ,  !- Variable Name
+    963     Timestep;                !- Reporting Frequency
+    964 Output:Variable,
+    965     Zone 2,                  !- Key Value
+    966     Zone Mean Air Temperature ,  !- Variable Name
+    967     Timestep;                !- Reporting Frequency
+  Processing Input Data File (in.idf) -- Complete
+  Maximum number of Alpha IDF Args=          14
+  Maximum number of Numeric IDF Args=          15
+  Number of IDF "Lines"=         127
+  Number of Defaulted Fields=          36
+  Number of Fields with Defaults=         195
+  Number of Autosized Fields=           0
+  Number of Autosizable Fields =           0
+  Number of Autocalculated Fields=          26
+  Number of Autocalculatable Fields =          28
+ Getting object=VERSION
+ Getting object=HEATBALANCEALGORITHM
+ Getting object=TIMESTEP
+ Getting object=SIMULATIONCONTROL
+ Getting object=OUTPUT:VARIABLEDICTIONARY
+ Getting object=OUTPUT:TABLE:SUMMARYREPORTS
+ Getting object=OUTPUT:VARIABLE
+ Getting object=SIZINGPERIOD:DESIGNDAY
+ Getting object=RUNPERIOD
+ Getting object=SITE:LOCATION
+ Getting object=SITE:GROUNDTEMPERATURE:BUILDINGSURFACE
+ Getting object=SCHEDULE:COMPACT
+  Processing Schedule Input -- Start
+ Getting object=SCHEDULETYPELIMITS
+ Getting object=EXTERNALINTERFACE:FUNCTIONALMOCKUPUNITEXPORT:TO:SCHEDULE
+  Processing Schedule Input -- Complete
+ Getting object=BUILDING
+ Getting object=SURFACECONVECTIONALGORITHM:INSIDE
+ Getting object=SURFACECONVECTIONALGORITHM:OUTSIDE
+ Getting object=MATERIAL
+ Getting object=WINDOWMATERIAL:GLAZING
+ Getting object=WINDOWMATERIAL:GAS
+ Getting object=CONSTRUCTION
+ Getting object=ZONE
+ Getting object=GLOBALGEOMETRYRULES
+ Getting object=BUILDINGSURFACE:DETAILED
+ Getting object=FENESTRATIONSURFACE:DETAILED
+ Getting object=SURFACEPROPERTY:CONVECTIVEHEATGAININSIDESURFACE
+ Getting object=ELECTRICEQUIPMENT
+ Getting object=EXTERNALINTERFACE
+ Getting object=OUTPUTCONTROL:TABLE:STYLE
+ MonthlyInputCount=           0
+ sizeMonthlyInput=           0
+ MonthlyFieldSetInputCount=           0
+ sizeMonthlyFieldSetInput=           0
+ MonthlyTablesCount=           0
+ MonthlyColumnsCount=           0
+ sizeReportName=         100
+ numReportName=          12
+ sizeSubTable=         100
+ numSubTable=          54
+ sizeColumnTag=         400
+ numColumnTag=         314
+ sizeTableEntry=         600
+ numTableEntry=         599
+ sizeCompSizeTableEntry=           0
+ numCompSizeTableEntry=           0
+ NumOfRVariable=        1303
+ NumOfRVariable(Total)=        1303
+ NumOfRVariable(Actual)=          27
+ NumOfRVariable(Summed)=           9
+ NumOfRVariable(Meter)=           9
+ NumOfIVariable=          94
+ NumOfIVariable(Total)=          94
+ NumOfIVariable(Actual)=           0
+ NumOfIVariable(Summed)=           0
+ MaxRVariable=        1000
+ MaxIVariable=          10
+ NumEnergyMeters=          20
+ NumVarMeterArrays=           9
+ maxUniqueKeyCount=        1500
+ maxNumberOfFigures=           0
+ MAXHCArrayBounds=          10
+ MaxVerticesPerSurface=           4
+ NumReportList=         500
+ InstMeterCacheSize=        1000
+ ClippingAlgorithm=SutherlandHodgman
+ MonthlyFieldSetInputCount=           0
+ NumConsideredOutputVariables=          18
+ MaxConsideredOutputVariables=          18
+ numActuatorsUsed=           0
+ numEMSActuatorsAvailable=           0
+ maxEMSActuatorsAvailable=           0
+ numInternalVariablesUsed=           0
+ numEMSInternalVarsAvailable=           0
+ maxEMSInternalVarsAvailable=           0
+ NumOfNodeConnections=           0
+ MaxNumOfNodeConnections=           0
