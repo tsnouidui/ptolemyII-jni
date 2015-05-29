@@ -1,0 +1,323 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="compositeActorWithQSS" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.devel">
+    </property>
+    <property name="QSSDirector" class="ptolemy.domains.qss.kernel.QSSDirector">
+        <property name="stopTime" class="ptolemy.data.expr.Parameter" value="stopTime">
+        </property>
+        <property name="absoluteQuantum" class="ptolemy.data.expr.Parameter" value="absoluteQuantum">
+        </property>
+        <property name="relativeQuantum" class="ptolemy.data.expr.Parameter" value="relativeQuantum">
+        </property>
+        <property name="errorTolerance" class="ptolemy.data.expr.Parameter" value="">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{65.0, 45.0}">
+        </property>
+    </property>
+    <property name="stopTime" class="ptolemy.data.expr.Parameter" value="0.3">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{155.0, 25.0}">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={65, 24, 1375, 876}, maximized=true}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1161, 787]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.1558468726030262">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{451.9033240830116, 351.44531250000006}">
+    </property>
+    <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="I have a QSS integrator which is in a composite actor. &#10;This QSS integrator is triggered  by a discrete clock &#10;which is outside of the composite actor. When I look at the outputs &#10;produced by the QSS integrator in the composite actor &#10;and outside the composite actor, I see that they do not match (x_inside, x_outside). &#10;The outputs of the composite actor produces more outputs  than to be expected?  &#10;&#10;I would have expect to see the same number of outputs produced. &#10;The real problem, I have with this is if I have such a composite actor &#10;connected to a downstream actor. In this situation, the downstream actor &#10;will probably not be triggered correctly.&#10;&#10;Note: Depending on whether the propagateInputDerivatives is true of false, &#10;we have different behaviors.&#10;I ran this example with propagateInputDerivatives set to false which is what we &#10;would like for efficiency reasons.&#10;&#10;Note: If I construct the whole system without the CompositeActor, &#10;then I see that the outputs (x_outside_2) are produced at a correct rate. &#10;&#10;Workaround:&#10;*************&#10;Remove any director in the compositeActor which makes the actor to be transparent.">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-50.0, 230.0]">
+        </property>
+    </property>
+    <property name="relativeQuantum" class="ptolemy.data.expr.Parameter" value="1">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[465.0, 25.0]">
+        </property>
+    </property>
+    <property name="absoluteQuantum" class="ptolemy.data.expr.Parameter" value="1e-4">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[275.0, 25.0]">
+        </property>
+    </property>
+    <property name="period" class="ptolemy.data.expr.Parameter" value="0.01">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[625.0, 25.0]">
+        </property>
+    </property>
+    <entity name="CompositeActor" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{190.0, 185.0}">
+        </property>
+        <property name="stopTime" class="ptolemy.data.expr.Parameter" value="stopTime">
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[25.0, 140.0]">
+            </property>
+        </property>
+        <property name="relativeQuantum" class="ptolemy.data.expr.Parameter" value="relativeQuantum">
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[25.0, 90.0]">
+            </property>
+        </property>
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={81, 297, 914, 631}, maximized=false}">
+        </property>
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 514]">
+        </property>
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
+        </property>
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{337.0, 263.578125}">
+        </property>
+        <property name="absoluteQuantum" class="ptolemy.data.expr.Parameter" value="absoluteQuantum">
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[25.0, 115.0]">
+            </property>
+        </property>
+        <property name="QSSDirector" class="ptolemy.domains.qss.kernel.QSSDirector">
+            <property name="stopTime" class="ptolemy.data.expr.Parameter" value="stopTime">
+            </property>
+            <property name="absoluteQuantum" class="ptolemy.data.expr.Parameter" value="absoluteQuantum">
+            </property>
+            <property name="relativeQuantum" class="ptolemy.data.expr.Parameter" value="relativeQuantum">
+            </property>
+            <property name="errorTolerance" class="ptolemy.data.expr.Parameter" value="">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[65.0, 45.0]">
+            </property>
+        </property>
+        <port name="in" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{10.0, 240.0}">
+            </property>
+        </port>
+        <port name="out" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{670.0, 240.0}">
+            </property>
+        </port>
+        <entity name="QSSIntegrator" class="ptolemy.domains.qss.kernel.QSSIntegrator">
+            <property name="propagateInputDerivatives" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[260.0, 240.0]">
+            </property>
+        </entity>
+        <entity name="x_inside" class="ptolemy.actor.lib.gui.TimedPlotter">
+            <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="x_inside">
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={828, 68, 500, 349}, maximized=false}">
+            </property>
+            <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[545.0, 160.0]">
+            </property>
+            <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>TimedPlotter</title>
+<xLabel></xLabel>
+<yLabel></yLabel>
+<xRange min="0.0" max="0.3"/>
+<yRange min="0.0" max="0.3000000000000001"/>
+<default stems="yes"/>
+</plot>?>
+            </configure>
+        </entity>
+        <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+            <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+            </property>
+            <vertex name="vertex1" value="{465.0, 240.0}">
+            </vertex>
+        </relation>
+        <link port="in" relation="relation"/>
+        <link port="out" relation="relation3"/>
+        <link port="QSSIntegrator.u" relation="relation"/>
+        <link port="QSSIntegrator.q" relation="relation3"/>
+        <link port="x_inside.input" relation="relation3"/>
+    </entity>
+    <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="stopTime" class="ptolemy.data.expr.Parameter" value="stopTime">
+        </property>
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="period">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{1.0}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{65.0, 185.0}">
+        </property>
+    </entity>
+    <entity name="x_outside" class="ptolemy.actor.lib.gui.TimedPlotter">
+        <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="x_outside">
+        </property>
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={849, 517, 500, 321}, maximized=false}">
+        </property>
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{290.0, 185.0}">
+        </property>
+        <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>TimedPlotter</title>
+<xLabel></xLabel>
+<yLabel></yLabel>
+<xRange min="0.0" max="0.3"/>
+<yRange min="0.0" max="0.3000000000000001"/>
+<default stems="yes"/>
+</plot>?>
+        </configure>
+    </entity>
+    <entity name="QSSIntegrator" class="ptolemy.domains.qss.kernel.QSSIntegrator">
+        <property name="propagateInputDerivatives" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{190.0, 120.0}">
+        </property>
+    </entity>
+    <entity name="x_outside_2" class="ptolemy.actor.lib.gui.TimedPlotter">
+        <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="x_outside_2">
+        </property>
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={302, 537, 500, 349}, maximized=false}">
+        </property>
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{290.0, 120.0}">
+        </property>
+        <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>TimedPlotter</title>
+<xLabel></xLabel>
+<yLabel></yLabel>
+<xRange min="0.0" max="0.3"/>
+<yRange min="0.0" max="0.3000000000000001"/>
+<default stems="yes"/>
+</plot>?>
+        </configure>
+    </entity>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;CompositeActor.out&quot;,x=190.0,y=185.0}, tail={id=&quot;TimedPlotter.input&quot;,x=290.0,y=185.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        <vertex name="vertex1" value="{140.0, 185.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation3.vertex1&quot;,x=140.0,y=185.0}, tail={id=&quot;CompositeActor.in&quot;,x=190.0,y=185.0}, points={} },{ head={id=&quot;relation3.vertex1&quot;,x=140.0,y=185.0}, tail={id=&quot;DiscreteClock.output&quot;,x=65.0,y=185.0}, points={} },{ head={id=&quot;relation3.vertex1&quot;,x=140.0,y=185.0}, tail={id=&quot;QSSIntegrator.u&quot;,x=190.0,y=120.0}, points={140.0,120.0} } }">
+        </property>
+    </relation>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;TimedPlotter2.input&quot;,x=290.0,y=120.0}, tail={id=&quot;QSSIntegrator.q&quot;,x=190.0,y=120.0}, points={} } }">
+        </property>
+    </relation>
+    <link port="CompositeActor.in" relation="relation3"/>
+    <link port="CompositeActor.out" relation="relation2"/>
+    <link port="DiscreteClock.output" relation="relation3"/>
+    <link port="x_outside.input" relation="relation2"/>
+    <link port="QSSIntegrator.u" relation="relation3"/>
+    <link port="QSSIntegrator.q" relation="relation"/>
+    <link port="x_outside_2.input" relation="relation"/>
+</entity>

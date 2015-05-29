@@ -1,0 +1,97 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="feedback_win" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.devel">
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1456, 876}, maximized=true}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1228, 760]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.3701758392327015">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{446.4685, 265.953125}">
+    </property>
+    <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{55.0, 20.0}">
+        </property>
+    </property>
+    <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="This model indicates a problem in the graph analysis &#10;implementation in Ptolemy II. &#10;&#10;The FMU implements the following model:&#10;&#10;Modelica model &#10;****************&#10;model feedback&#10;  Real x( start = 0.0);&#10;  Modelica.Blocks.Interfaces.RealInput u1;&#10;  Modelica.Blocks.Interfaces.RealInput u2;&#10;  Modelica.Blocks.Interfaces.RealOutput y;&#10;equation&#10;   der( x) = u2 - x;&#10;   y  = u1;&#10;  annotation (uses(Modelica(version=&quot;3.2.1&quot;)));&#10;end feedback;&#10;&#10;Analysis&#10;********&#10;There is a direct dependency between the output y and the input u1. &#10;There is no dependency between output y and input u2.&#10;However when we connect, the output y to the input u2, &#10;Ptolemy II indicates that it found  a zero delay loop which is wrong. &#10;The graph analysis seems to  work at the actor level not at the port level.&#10;&#10;The Modelica model is feeback.mo, the fmu is feedback_win.fmu. &#10;The FMU can be run on 32 and 64bit Windows machines.&#10;">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[10.0, 50.0]">
+        </property>
+    </property>
+    <entity name="feedback" class="ptolemy.actor.lib.fmi.FMUImport">
+        <property name="fmuFile" class="ptolemy.data.expr.FileParameter" value="feedback_win.fmu">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[590.0, 260.0]">
+        </property>
+        <port name="x" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="der_x_" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <display name="der(x)"/>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="u1" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+        </port>
+        <port name="u2" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+        </port>
+        <port name="y" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+            <property name="dependencies" class="ptolemy.kernel.util.StringAttribute">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                <property name="style" class="ptolemy.actor.gui.style.HiddenStyle">
+                </property>
+            </property>
+        </port>
+    </entity>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <link port="feedback.u2" relation="relation"/>
+    <link port="feedback.y" relation="relation"/>
+</entity>
